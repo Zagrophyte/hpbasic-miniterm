@@ -13,7 +13,7 @@
 130   STATUS 1,1;Cury ! Capture current Y
 140   DIM Disp$[80] ! Status Message
 150   Addcr=1 ! Received CRLFs are processed
-160   Echo=1 ! Sent chars are not echoed
+160   Echo=0 ! Sent chars are not echoed
 170   GOSUB Disptermline
 180   Choice$=""
 190   Warning=0
@@ -44,7 +44,7 @@
 440         Addcr=1
 450       END IF
 460       GOSUB Disptermline
-470     CASE "PuTTY"     ! CTRL+E
+470     CASE CHR$(5) ! CTRL+E
 480       IF Echo THEN
 490         Echo=0
 500       ELSE
